@@ -1,5 +1,22 @@
 // Modal functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // Navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navList = document.querySelector('.nav-list');
+    
+    if (navToggle && navList) {
+        navToggle.addEventListener('click', function() {
+            navList.classList.toggle('active');
+        });
+    }
+    
+    // Close nav when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('nav') && !event.target.closest('.nav-toggle')) {
+            navList.classList.remove('active');
+        }
+    });
+    
     // Get all service cards
     const serviceCards = document.querySelectorAll('.service-card');
     

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Cleaning & Hygiene</title>
-    <link rel="icon" type="image/png" href="assets/icon.jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -18,16 +17,13 @@
                     <h1>Pro Cleaning <span>& Hygiene</span></h1>
                 </div>
                 <nav>
-                    <ul class="nav-list">
+                    <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    <span class="fas fa-bars"></span>
-                </button>
             </div>
         </div>
     </header>
@@ -235,7 +231,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Pro Cleaning & Hygiene. All rights reserved. Developed by <a href="https://virtuodesigns.online" style="color:var(--accent);font-weight:600;">Virtuo Designs</a></p>
+                <p>&copy; 2023 Pro Cleaning & Hygiene. All rights reserved. Developed by <a href="https://virtuodesigns.online">Virtuo Designs</a></p>
             </div>
         </div>
     </footer>
@@ -246,36 +242,38 @@
             <i class="fas fa-broom"></i>
         </button>
         <div class="contact-form-container">
-            <span class="close-contact-modal" style="position:absolute;top:18px;right:22px;font-size:1.5rem;cursor:pointer;color:#2980b9;z-index:10;" title="Close">&times;</span>
             <h3>Quick Contact</h3>
-            <div class="contact-methods">
-                <a href="tel:+27726414851" class="btn"><i class="fas fa-phone"></i> CALL</a>
-                <a href="https://wa.me/+27726414851" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WHATSAPP</a>
-            </div>
             <p>Send us a message and we'll get back to you as soon as possible.</p>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone">
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" rows="3"></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-primary">SEND</button>
-                    <button type="button" class="btn" id="cancel-contact">CANCEL</button>
-                </div>
-            </form>
-            <div id="contact-success" style="display:none;padding:1.5rem;text-align:center;color:var(--success);font-weight:600;">Thank you! Your message has been sent.</div>
+            
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="3"></textarea>
+            </div>
+            
+            <div class="form-actions">
+                <button class="btn btn-primary">SEND</button>
+                <button class="btn" id="cancel-contact">CANCEL</button>
+            </div>
+            
+            <div class="contact-methods">
+                <a href="tel:+27726414851" class="btn">CALL</a>
+                <a href="https://wa.me/+27726414851" class="btn btn-whatsapp">WHATSAPP</a>
+            </div>
         </div>
     </div>
 
@@ -566,60 +564,6 @@
     </div>
 
     <script src="script.js"></script>
-<script>
-// Responsive header navigation
-const navToggle = document.querySelector('.nav-toggle');
-const navList = document.querySelector('.nav-list');
-if (navToggle && navList) {
-    navToggle.addEventListener('click', function() {
-        navList.classList.toggle('show');
-    });
-    // Close menu when a link is clicked
-    navList.querySelectorAll('a').forEach(function(link) {
-        link.addEventListener('click', function() {
-            navList.classList.remove('show');
-        });
-    });
-}
-</script>
-<script>
-// Fade-in animation for contact modal
-const contactModal = document.querySelector('.contact-form-container');
-if (contactModal) {
-    contactModal.classList.add('fade-in');
-}
-
-// Close button functionality
-document.querySelector('.close-contact-modal').onclick = function() {
-    contactModal.classList.remove('active');
-};
-
-// Cancel button functionality
-document.getElementById('cancel-contact').onclick = function() {
-    contactModal.classList.remove('active');
-};
-
-// Confirmation message and form submit
-const contactForm = document.getElementById('contactForm');
-contactForm.onsubmit = function(e) {
-    e.preventDefault();
-    contactForm.style.display = 'none';
-    document.getElementById('contact-success').style.display = 'block';
-    setTimeout(function() {
-        document.getElementById('contact-success').style.display = 'none';
-        contactForm.style.display = 'block';
-        contactModal.classList.remove('active');
-        contactForm.reset();
-    }, 2500);
-};
-
-// Allow Enter to submit
-contactForm.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && e.target.tagName !== 'TEXTAREA') {
-        contactForm.dispatchEvent(new Event('submit', {cancelable: true, bubbles: true}));
-    }
-});
-</script>
 <script>
 document.querySelectorAll('.modal').forEach(function(modal) {
     var btn = modal.querySelector('.btn.btn-primary');
