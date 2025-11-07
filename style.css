@@ -255,6 +255,14 @@ nav a:hover::after {
     color: var(--secondary);
 }
 
+.service-summary {
+    font-size: 0.95rem;
+    color: #566270;
+    line-height: 1.4;
+    margin: 0 0 0.9rem;
+    min-height: 42px; /* keep cards equal height when lines differ */
+}
+
 .service-price {
     font-size: 1.5rem;
     font-weight: 700;
@@ -282,6 +290,11 @@ nav a:hover::after {
 .service-card .btn {
     width: 100%;
     text-align: center;
+}
+
+.service-action {
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
 }
 
 .modal {
